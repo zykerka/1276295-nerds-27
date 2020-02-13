@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
@@ -6,36 +6,59 @@
   </head>
   <body>
 
-    <header>
-      <nav>
-        <a href="index.html">
+    <header class="main-header">
+      <nav class="main-navigation">
+        <a href="index.html" class="main-header-logo">
           <img src="img/nerds-logo.svg" width="#" height="#" alt="Логотип студии «Nerds»">
         </a>  
-        <ul>
+        <ul class="site-navigation">
           <li><a href="#">Студия</a></li>
           <li><a href="#">Клиенты</a></li>
           <li><a href="nerds-catalog.html">Магазин</a></li>
           <li><a href="#">Контакты</a></li>
         </ul>
-        <ul>
+        <ul class="user-navigation">
           <li>
-             <button type="button">Корзина</button>
-           </li>
+            <img src="img/cart-icon.svg" width="#" height="#" alt="Перейти в корзину">
+            <a class="cart-link" href="#">Корзина</a>
+          </li>
         </ul>      
       </nav>
-      <h1>Магазин готовых шаблонов</h1>
     </header>
 
-    <main>
+    <main class="container">
+      <h1 class="visually-hidden">Магазин готовых шаблонов</h1>
+      
       <section>
-        <ul>
-          <li><h3>Стоимость:</h3></li>
-            <!-- Здесь будет форма -->
-          <li><h3>Сетка:</h3></li>
-            <!-- Здесь будет форма -->
-          <li><h3>Особенности:</h3></li>
-            <!-- Здесь будет форма -->
-          <button type="button">Показать</button>
+      <h2 class="visually-hidden">Фильтры продуктов</h2>
+      <form class="filter-grid" method="get" action="https://echo.htmlacademy.ru">
+        <fieldset>
+          <legend>Сетка:</legend>
+           <input name="filter-grid" type="radio" id="filter-adaptive" checked>
+           <label for="filter-adaptive">Адаптивная</label><br>
+           <input name="filter-grid" type="radio" id="filter-fixed">
+           <label for="filter-fixed">Фиксированная</label><br>
+           <input name="filter-grid" type="radio" id="filter-rubber">
+           <label for="filter-rubber">Резиновая</label><br>
+        </fieldset>
+      </form>
+     
+      <form class="filter-features" method="get" action="https://echo.htmlacademy.ru">
+         <fieldset>
+           <legend>Особенности:</legend>
+           <input name="filter-features" type="checkbox" id="filter-slider" checked>
+           <label for="filter-slider">Слайдер</label><br>
+           <input name="filter-features" type="checkbox" id="filter-advantages">
+           <label for="filter-slider">Блок преимуществ</label><br>
+           <input name="filter-features" type="checkbox" id="filter-news" checked>
+           <label for="filter-news">Новости</label><br>
+           <input name="filter-features" type="checkbox" id="filter-gallery">
+           <label for="filter-gallery">Галерея</label><br>
+           <input name="filter-features" type="checkbox" id="filter-cart">
+           <label for="filter-cart">Корзина</label><br>
+         </fieldset>
+      </form>
+      <button type="button">Показать</button>
       </section>
 
       <section>
@@ -105,8 +128,21 @@
 
     <section>
       <h2>Напишите нам</h2>
-      <!-- Здесь будет форма -->
-      <button type="button">Отправить</button>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <p>
+          <label for="pop-up-name">Ваше имя:</label>
+          <input id="pop-up-name" type="text" name="name" placeholder="Имя Фамилия">
+        </p>
+        <p>
+          <label for="pop-up-email">Ваш email:</label>
+          <input id="pop-up-email" type="text" name="email" placeholder="email@expample.com">
+        </p>
+        <p>
+          <label for="pop-up-text">Текст письма:</label>
+          <input id="pop-up-text" type="text" name="text" placeholder="В свободной форме">
+        </p>
+        <button class="modal-close" type="button">Отправить</button>
+      </form>
     </section>
 
   </body>
